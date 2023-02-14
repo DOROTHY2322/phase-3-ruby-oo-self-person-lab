@@ -43,7 +43,7 @@ class Person
     end
   
     def take_bath
-        self.hygiene = [[@hygiene + 4, 0].max, 10].min
+        self.hygiene = self.hygiene + 4
         "♪ Rub-a-dub just relaxing in the tub ♫"
       end
       
@@ -58,20 +58,20 @@ class Person
       
   
       def call_friend(friend)
-        self.happiness = [@happiness + 3, 10].min
-        friend.happiness = [friend.happiness + 3, 10].min
+        self.happiness = self.happiness + 3
+        friend.happiness = friend.happiness + 3
         "Hi #{friend.name}! It's #{@name}. How are you?"
       end
       
 
       def start_conversation(friend, topic)
         if topic == "politics"
-        @happiness = [@happiness - 2, 0].max
-        friend.happiness = [friend.happiness - 2, 0].max
+        self.happiness = self.happiness - 2
+        friend.happiness = friend.happiness - 2
         "blah blah partisan blah lobbyist"
         elsif topic == "weather"
-        @happiness = [@happiness + 1, 10].min
-        friend.happiness = [friend.happiness + 1, 10].min
+        self.happiness = self.happiness + 1
+        friend.happiness = friend.happiness + 1
         "blah blah sun blah rain"
         else
         "blah blah blah blah blah"
